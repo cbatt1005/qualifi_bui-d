@@ -1,0 +1,35 @@
+{% extends 'basecss.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+      font-family: Helvetica, sans-serif;
+      padding: 5%;
+      text-align: center;
+      font-size: 50;
+    }
+    
+  </style>
+</head>
+<div>
+<body>
+  </br>
+</br>
+  <h1>Update Campaign</h1>
+  Logged In User: {{ user.first_name }}
+  <br>
+  
+  <form action="" method="post">
+  {% csrf_token %}
+
+  {{ form.as_p }}
+  <br>
+  <br>
+
+  <input type="submit" value="Update"
+  class="btn btn-secondary">
+</form>
+
+</body>
+</div>
+{% endblock content %}

@@ -1,0 +1,8 @@
+ 
+ #delete and update side bar for campaign list
+ <td align="right">
+        <a href="{% url 'update-campaign' campaign.id %}" class="btn btn-outline-secondary btn-sm">Update</a>
+      </td>
+      <td align="right">
+        <a href="{% url 'delete-campaign' campaign.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
+      </td>

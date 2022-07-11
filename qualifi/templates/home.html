@@ -1,0 +1,30 @@
+{% extends 'basecss.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+      font-family: Helvetica, sans-serif;
+      padding: 5%;
+      text-align: center;
+      font-size: 50;
+    }
+    
+  </style>
+</head>
+<div>
+<body>
+  </br>
+</br>
+</br>
+</br>
+</br>
+{% if user.is_authenticated %}
+
+  <h1>Welcome Qualifi</h1>
+  <h3>Logged in as {{ user }}</h3>
+{% else %}
+<h1>Welcome Qualifi</h1>
+{% endif %}
+</body>
+</div>
+{% endblock content %}

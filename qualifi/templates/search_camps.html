@@ -1,0 +1,41 @@
+{% extends 'basecss.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+      font-family: Helvetica, sans-serif;
+      padding: 5%;
+      text-align: center;
+      font-size: 50;
+    }
+    
+  </style>
+</head>
+<div>
+<body>
+  {% if searched %}
+  <h1>Search Results for {{ searched }}</h1></br>
+  <table class="table table-striped table-hover table-bordered">
+    {% for camp in campaign_page %}
+      <tr>
+        {% if camp.brand is null or camp.brand == '' or camp.brand == none %}
+      <td>
+          <a href="/show_campaign/{{ camp.id }}"> {{ camp.campaign }}</a></br>
+      </td>
+      <td align="right">
+          <a href="{% url 'update-campaign' camp.id %}" class="btn btn-outline-secondary btn-sm">Update</a>
+      </td>
+        {% else %}
+        <td>
+          <a href="/show_campaign/{{ camp.id }}"> {{ camp.campaign }}</a></br>
+      </td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+</table>
+  {% endif %} 
+  {% include "paginate.html" %}
+</body>
+</div>
+{% endblock content %}
+

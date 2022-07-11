@@ -1,0 +1,39 @@
+{% extends 'basecss.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+      font-family: Helvetica, sans-serif;
+      padding: 5%;
+      text-align: center;
+      font-size: 50;
+    }
+    
+  </style>
+</head>
+<div>
+<body>
+  </br>
+</br>
+  <h1>Update Campaign</h1>
+  <h4>you need to update {{ count }} records</h4>
+  <br>
+  <table class="table table-striped table-hover table-bordered">
+  {% for x in campaign_page %}
+  <tr>
+    <td align="left">
+<a href="{% url 'show-campaigns' x.id %}" class="btn btn-outline-primary"> {{ x.campaign }}</a><br/>
+    </td>
+    <td align="right">
+        <a href="{% url 'update-campaign' x.id %}" class="btn btn-outline-secondary btn-sm">Update</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+  <br>
+  <br>
+  {% include "paginate.html" %}
+</body>
+
+</div>
+{% endblock content %}

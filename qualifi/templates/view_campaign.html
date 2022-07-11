@@ -1,0 +1,32 @@
+{% extends 'basecss.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+      font-family: Helvetica, sans-serif;
+      padding: 5%;
+      text-align: center;
+      font-size: 50;
+    }
+    
+  </style>
+</head>
+<center>
+    <h1>Add Campaign</h1>
+    <br/>
+    <br/>
+    {% if submitted %}
+        Campaign submitted succsessfully!
+    {% else %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+
+    {% endif %}
+    
+</center>
+{% endblock content %}

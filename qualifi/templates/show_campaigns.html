@@ -1,0 +1,33 @@
+{% extends 'basecss.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+      font-family: Helvetica, sans-serif;
+      padding: 5%;
+      text-align: left;
+      font-size: 200;
+    }
+    
+  </style>
+</head>
+<div>
+<body>
+  <h1 align="center">{{ camp.campaign }}</h1>
+</br>
+<table class="table table-striped table-hover table-bordered">
+<tr><td>Agency: {{ camp.agency }} </td> </tr>
+<tr><td>Brand: {{ camp.brand }} </td> </tr>
+<tr><td>Platform: {{ camp.channel }} </td> </tr>
+<tr><td>Start Date: {{ camp.start_date }} </td> </tr>
+<tr><td>Advertiser: {{ camp.advertiser_name }} </td> </tr>
+<tr><td>Market: {{ camp.market }} </td> </tr>
+<tr><td>Impression Goal: {{ camp.impression_goal }} </td> </tr>
+<tr><td>Entry Date: {{ camp.entry_date }} </td> </tr>
+  
+    
+  
+</table>
+</body>
+</div>
+{% endblock content %}

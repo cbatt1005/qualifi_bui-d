@@ -1,0 +1,23 @@
+{% extends "pacing/base.html" %}
+{% block content %}
+<style>
+    .content-section{
+        display: absolute;
+      margin-top: 75px;
+      margin-left: 75px;
+      margin-right: 75px;
+    }
+</style>
+<div class="content-section">
+    <br>
+    <br>
+    <br>
+    <h4>You have been logged out</h4>
+</div>
+    <div class="border-top pt-3" style="position: absolute; left: 200px; top: 200px;">
+        <small class="text-muted">
+            <a class="ml-2" href="{% url 'login' %}">Log In Again</a>
+        </small>
+    </div>
+
+    {% endblock content %}

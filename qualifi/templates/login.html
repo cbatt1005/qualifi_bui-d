@@ -1,0 +1,27 @@
+{% extends "pacing/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    .content-section{
+        display: absolute;
+        margin-top: 75px;
+        margin-left: 75px;
+        margin-right: 75px;
+    }
+</style>
+    <div class = 'content-section' >
+        
+        <form method ='POST'>
+            {% csrf_token %}
+            <fieldset class= "form-group">
+                <legend class= 'border-bottom mb-4'>Log in</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class='form-group'>
+                <button class='btn btn-outline-info' type="submit">Login</button>
+            </div>
+            <a href="/password_reset">Forgot password?</a>
+        </form>
+        
+    </div>
+    {% endblock content %}

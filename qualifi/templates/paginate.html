@@ -1,0 +1,29 @@
+{% if campaign_page.has_previous %}
+  <a href="?page={{ campaign_page.previous_page_number }}">« Previous page</a>
+
+  {% if campaign_page.number > 3 %}
+    <a href="?page=1">1</a>
+    {% if campaign_page.number > 4 %}
+      <span>...</span>
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% for num in campaign_page.paginator.page_range %}
+  {% if campaign_page.number == num %}
+    <a href="?page={{ num }}">{{ num }}</a>
+  {% elif num > campaign_page.number|add:'-3' and num < campaign_page.number|add:'3' %}
+    <a href="?page={{ num }}">{{ num }}</a>
+  {% endif %}
+{% endfor %}
+
+{% if campaign_page.has_next %}
+  {% if campaign_page.number < campaign_page.paginator.num_pages|add:'-3' %}
+    <span>...</span>
+    <a href="?page={{ campaign_page.paginator.num_pages }}">{{ campaign_page.paginator.num_pages }}</a>
+  {% elif campaign_page.number < campaign_page.paginator.num_pages|add:'-2' %}
+    <a href="?page={{ campaign_page.paginator.num_pages }}">{{ campaign_page.paginator.num_pages }}</a>
+  {% endif %}
+
+  <a href="?page={{ campaign_page.next_page_number }}">Next Page »</a>
+{% endif %}
